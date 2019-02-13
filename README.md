@@ -10,7 +10,7 @@ require('vendor/autoload.php');
 use wrossmann\json_stream\JsonStream;
 
 $js = new JsonStream();
-$js->manual_encode('foo');
+$js->encode('foo');
 ```
 
 ### Fancy, to anything
@@ -22,7 +22,7 @@ The real benefit to this is being able to append additional stream filters, such
 ```
 $handle = fopen('zlib://foo.json.gz', 'wb');
 $js = new JsonStream($handle, JSON_UNESCAPED_UNICODE);
-$js->manual_encode('foo');
+$js->encode('foo');
 ```
 
 ## Anticipated Memory Usage
