@@ -19,7 +19,7 @@ class JsonStream {
         // arrays must be sequentially indexed from 0
         $keys = array_keys($obj);
         for( $i=0,$c=count($keys); $i<$c; ++$i ) {
-            if( $keys[$i] != $i ) {
+            if( $keys[$i] !== $i ) {
                 return false;
             }
         }
