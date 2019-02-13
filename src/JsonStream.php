@@ -31,7 +31,7 @@ class JsonStream {
         $c = count($obj) - 1;
         $i = 0;
         foreach( $obj as $value ) {
-            $this->manual_encode($value);
+            $this->encode($value);
             if( $c != $i++ ) {
                 $this->write(',');
             }
@@ -51,8 +51,8 @@ class JsonStream {
         $i = 0;
         foreach( $obj as $key => $value ) {
             // object keys forced to string
-            printf('%s:', json_encode((string)$key, $this->json_flags));
-            $this->manual_encode($value);
+            $this->write(sprintf('%s:', json_encode((string)$key, $this->json_flags)));
+            $this->encode($value);
             if( $c != $i++ ) {
                 $this->write(',');
             }
@@ -60,7 +60,7 @@ class JsonStream {
         $this->write('}');
     }
     
-    public function manual_encode($obj) {
+    public function encode($obj) {
         switch( gettype($obj) ) {
             // pass simple types off to json_encode()
             case 'string':
