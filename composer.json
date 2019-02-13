@@ -1,0 +1,22 @@
+{
+    "name": "wrossmann/json_stream",
+    "description": "Streaming JSON Writer",
+	"keywords": ["json", "serialization", "stream"],
+    "type": "library",
+    "license": "apache",
+    "authors": [
+        {
+            "name": "Wade Rossmann",
+            "email": "wrossmann@gmail.com"
+        }
+    ],
+    "require": {
+		"php": ">= 7",
+		"ext-json": "*"
+	},
+	"autoload": {
+		"psr-4": {
+			"wrossmann\\json_stream\\": "src/"
+		}
+	}
+}
